@@ -12,11 +12,12 @@ https://leetcode.cn/problems/valid-parentheses/
 
 
 class Solution:
+
     def isValid(self, s: str) -> bool:
         n = len(s)
-        if n%2 == 1:
+        if n % 2 == 1:
             return False
-        pairs = {')':'(', ']':'[', '}':'{'}
+        pairs = {')': '(', ']': '[', '}': '{'}
         left_brackets = []
         for c in s:
             if c == '(' or c == '[' or c == '{':
@@ -34,4 +35,3 @@ class Solution:
             return False
         # 都匹配完成，返回True
         return True
-        

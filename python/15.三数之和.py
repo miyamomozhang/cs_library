@@ -6,10 +6,12 @@ https://leetcode.cn/problems/3sum/
 你返回所有和为 0 且不重复的三元组。
 
 注意：答案中不可以包含重复的三元组。 """
+
 from typing import List
 
 
 class Solution:
+
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
         # nums排序
@@ -21,14 +23,14 @@ class Solution:
         j = 1
         k = n - 1
         while i < n - 2:
-            if i > 0 and nums[i] == nums[i-1]:
+            if i > 0 and nums[i] == nums[i - 1]:
                 # 跟上一轮重复了，下一个
                 i += 1
                 continue
             j = i + 1
             k = n - 1
             while j < k:
-                if j > i + 1 and nums[j] == nums[j-1]:
+                if j > i + 1 and nums[j] == nums[j - 1]:
                     # 跟上一轮重复了，下一个
                     j += 1
                     continue
@@ -47,4 +49,3 @@ class Solution:
             # 开始下一轮
             i += 1
         return ans
-

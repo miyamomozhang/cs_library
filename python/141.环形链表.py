@@ -12,11 +12,14 @@ from typing import Optional
 
 # Definition for singly-linked list.
 class ListNode:
+
     def __init__(self, x):
         self.val = x
         self.next = None
 
+
 class Solution:
+
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         # 哈希集合set
         nodeset = set()
@@ -27,6 +30,5 @@ class Solution:
             # 不在集合中，新节点，加入集合
             nodeset.add(head)
             head = head.next
-        
+
         return False
-        

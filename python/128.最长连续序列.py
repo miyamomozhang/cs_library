@@ -9,6 +9,7 @@ from typing import List
 
 
 class Solution:
+
     def longestConsecutive(self, nums: List[int]) -> int:
         n = len(nums)
         if n <= 1:
@@ -27,6 +28,3 @@ class Solution:
                     cur_ans += 1
                 ans = max(ans, cur_ans)
         return ans
-
-
-

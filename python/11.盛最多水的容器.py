@@ -12,6 +12,7 @@ from typing import List
 
 
 class Solution:
+
     def maxArea(self, height: List[int]) -> int:
         # 双指针
         # 容积 = 宽 * 高
@@ -30,5 +31,5 @@ class Solution:
                 cur_volume = height[left] * (right - left)
                 left += 1
             max_volume = max(max_volume, cur_volume)
-            
+
         return max_volume

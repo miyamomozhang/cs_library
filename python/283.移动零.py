@@ -13,22 +13,23 @@ from typing import List
 
 
 class Solution:
+
     def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
         if n <= 1:
-            return 
-        
+            return
+
         # slow 要存放非0数的位置
-        slow = 0  
+        slow = 0
         # fast 用来遍历
         fast = 0
         while fast < n:
             # 当前fast位置为0，说明不是slow位置要的数，继续找fast+1
             if nums[fast] != 0:
                 # 非0值，交换, slow和fast双双往下走
-                nums[slow],nums[fast] = nums[fast], nums[slow]
+                nums[slow], nums[fast] = nums[fast], nums[slow]
                 slow += 1
             fast += 1

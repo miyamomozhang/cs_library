@@ -9,6 +9,7 @@ from typing import List
 
 
 class Solution:
+
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         n = len(strs)
         if n <= 1:
@@ -16,13 +17,15 @@ class Solution:
         str_hash = {}
         for str in strs:
             # 注意：list列表是不可哈希的，不能当做字典的key
-            sorted_str = tuple(sorted(str)) # 转成tuple元组,可哈希，做key
+            sorted_str = tuple(sorted(str))  # 转成tuple元组,可哈希，做key
             # sorted()：new list  可应用在所有的可迭代对象，不改变原对象，返回一个新的对象
             # L.sort()：in-place  应用在 list 上的方法，改变原来的list
             if sorted_str in str_hash.keys():
                 str_hash[sorted_str].append(str)
             else:
-                str_hash[sorted_str] = [str,]
+                str_hash[sorted_str] = [
+                    str,
+                ]
         # dict.values()得到的是dict_values对象
         # Python3 字典 values() 方法返回一个视图对象。视图对象:元组
         # dict.keys()、dict.values() 和 dict.items() 返回的都是视图对象（ view objects），提供了字典实体的动态视图，这就意味着字典改变，视图也会跟着变化。
@@ -38,7 +41,7 @@ class Solution:
         dict_values([[1, 3, 5], [2, 4, 6]])
         dict_items([('a', [1, 3, 5]), ('b', [2, 4, 6])])
         """
-        return list(str_hash.values()) 
+        return list(str_hash.values())
 
 
 """ 力扣官方参考，使用了collections容器

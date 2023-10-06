@@ -11,15 +11,16 @@ from typing import List
 
 
 class Solution:
+
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # num_index，字典，nums中元素为key,对应的数组下标为value
         num_index = {}
         # enumerate，用于可迭代的对象，同时得到下标和对应的值
-        for i,num in enumerate(nums):
+        for i, num in enumerate(nums):
             # 对于当前num,在哈希表中找target-num
             tmp = target - num
-            if  tmp in num_index.keys():
-                return [num_index[tmp],i]
+            if tmp in num_index.keys():
+                return [num_index[tmp], i]
             # 没找到，把当前num存入哈希表
             num_index[num] = i
         return []

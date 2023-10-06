@@ -8,13 +8,16 @@ from typing import Optional
 
 # Definition for singly-linked list.
 class ListNode:
+
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
 
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+    def mergeTwoLists(self, list1: Optional[ListNode],
+                      list2: Optional[ListNode]) -> Optional[ListNode]:
         # prehead = pre, 是新链表的头节点的父节点
         # 要返回新链表的头节点，新链表生成需要移动节点，所以需要两个
         # prehead保持不动，pre来移动
@@ -32,4 +35,3 @@ class Solution:
         pre.next = list1 if list1 is not None else list2
 
         return prehead.next
-                

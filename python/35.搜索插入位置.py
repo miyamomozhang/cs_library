@@ -5,17 +5,19 @@ https://leetcode.cn/problems/search-insert-position/
 
 请必须使用时间复杂度为 O(log n) 的算法。
 """
+
 from typing import List
 
 
 class Solution:
+
     def searchInsert(self, nums: List[int], target: int) -> int:
         n = len(nums)
         # 二分查找
         left = 0
         right = n - 1
         while left <= right:
-            mid = (right - left)//2 + left
+            mid = (right - left) // 2 + left
             if nums[mid] == target:
                 return mid
             elif nums[mid] > target:
