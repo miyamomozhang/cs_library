@@ -25,9 +25,58 @@ https://github.com/github/gitignore/blob/main/Python.gitignore
 
 # mac的.gitignore文件
 
-加上 **/.DS_Store
+参考github官方文档：https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+中文版：https://docs.github.com/zh/get-started/getting-started-with-git/ignoring-files
 
 .DS_Store 是用于存放目录自定义属性（如图表、位置属性）等元数据信息的系统文件，由 Finder 自动创建。虽然所有 . 开头的文件/文件夹默认隐藏（可以使用 Command + Shift + . 显示所有隐藏文件），平时我们看不见，也不影响使用，但是 Git 仍会将其记录下来，即便我只是在同目录下移动文件。所以为了防止某些信息不经意间泄露出来，建议使用某些手段使 Git 忽略 .DS_Store 文件。
+
+## 全局配置
+
+- 打开终端，在某一个位置创建 .gitignore_global 文件（建议在当前用户目录下）：
+    ~~~
+    touch ~/.gitignore_global
+    ~~~
+    打开文件 vi ~/.gitconfig
+    或open ~/.gitignore_global
+    ~~~
+    .DS_Store
+    **/.DS_Store
+    .DS_Store?
+    ~~~
+
+- 对git进行全局设置，让git忽略.gitignore_global中的所有文件：
+    ~~~
+    git config --global core.excludesfile ~/.gitignore_global
+    ~~~
+
+
+## 单个项目配置
+
+针对.DS_Store文件，在git工程文件夹中新建.gitignore文件，在文件中设置：
+~~~
+.DS_Store
+**/.DS_Store
+.DS_Store?
+~~~
+
+## 对于已经提交的
+
+希望git能够忽略，但同时并不会删除本地文件，需要在控制台输入以下命令：
+~~~
+git rm -r --cached $file_path
+~~~
+
+## 批量移除已有的 .DS_Store
+
+即便后续不会再记录，仓库中的 .DS_Store 都还在，需要手动删除。
+
+终端进入仓库目录，输入：
+~~~
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+~~~
+这样就删除了所有该仓库的 .DS_Store 。重新提交推送git push即可。
+
 
 # .gitignore文件补充
 
