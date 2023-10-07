@@ -1,27 +1,31 @@
 # .gitignore文件模板
 
-gitignore文件是有模板的，我们不需要自己写，如Python的gitignore文件：
+gitignore文件网上有很多模板，我们不太需要自己写，如Python的gitignore文件：
 https://github.com/github/gitignore/blob/main/Python.gitignore
 
-上面这个仓库上还有其他语言的.gitignore文件模板可供参考
+上面这个仓库上还有其他很多.gitignore文件模板可供参考，我看了没找到Django之类的，只看到了Python的
 
-或者可以参考下面这个：https://www.toptal.com/developers/gitignore
+或者可以参考下面这个：https://www.toptal.com/developers/gitignore ，这个网站找到的比较多
 
 # .gitignore规范
 
-.gitignore文件用于忽略文件，规范如下：
+一般先找模板套，但是实际运用上，我们很多时候还是需要改的，需要遵守规范。
 
-- 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略
-- 可以使用标准的 glob 模式匹配
-- 匹配模式最后跟反斜杠（/）说明要忽略的是目录
-- 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反
-- 第一个 / 会匹配路径的根目录，举个栗子，”/*.html”会匹配”index.html”，而不是”d/index.html”。
-- 通配符 * 匹配任意个任意字符，? 匹配一个任意字符。需要注意的是通配符不会匹配文件路径中的 /，举个栗子，”d/*.html”会匹配”d/index.html”，但不会匹配”d/a/b/c/index.html”。
-- 两个连续的星号 **有特殊含义：
-    - 以 **/ 开头表示匹配所有的文件夹，例如 **/test.md 匹配所有的test.md文件。
-    - 以 /** 结尾表示匹配文件夹内所有内容，例如 a/** 匹配文件夹a中所有内容。
-    - 连续星号 ** 前后分别被 / 夹住表示匹配0或者多层文件夹，例如 a/**/b 匹配到 a/b 、a/x/b 、a/x/y/b 等。
-- 前缀 ! 的模式表示如果前面匹配到被忽略，则重新添加回来。如果匹配到的父文件夹还是忽略状态，该文件还是保持忽略状态。如果路径名第一个字符为 ! ，则需要在前面增加 \ 进行转义。
+我自己的仓库，本地我可能会用到一些记录的文件，不太想要发布到网上，仅仅是给自己学习做一个参考，记录暂时没解决的难点和坑，包括一些不能理解的疑问，完全没有梳理，像记草稿一样，没有什么逻辑，不太适合发布。
+
+.gitignore文件用于忽略文件，规范如下：（glob模式匹配）
+
+官方详细版：https://git-scm.com/docs/gitignore
+
+| .gitignore                                                   | Git                   |
+| ------------------------------------------------------------ | --------------------- |
+| 空行或注释（#）                                              | 忽略空行和注释        |
+| 有斜杠 /：目录，无：文件                                     | 不提交相应文件/文件夹 |
+| 使用标准的glob模式匹配（ [glob Wikipedia](https://en.wikipedia.org/wiki/Glob_(programming))） |                       |
+| 通配符 * ：0/多个字符                                        |                       |
+| 通配符 ？：1个字符                                           |                       |
+| `**`：<br />`dir/** `：匹配dir文件夹所有内容<br />`dir1/**/dirn` ：匹配0或者多层文件夹 |                       |
+| 前缀 !（取反） 的模式表示如果前面匹配到被忽略，则重新添加回来。<br />如果匹配到的父文件夹还是忽略状态，该文件还是保持忽略状态。<br />如果路径名第一个字符为 ! ，则需要在前面增加 \ 进行转义。<br />（补充：win的路径名是反斜杠\，在前面加一个\转义） |                       |
 
 # mac的.gitignore文件
 
@@ -53,7 +57,7 @@ https://github.com/github/gitignore/blob/main/Python.gitignore
 
 ## 单个项目配置
 
-针对.DS_Store文件，在git工程文件夹中新建.gitignore文件，在文件中设置：
+针对.DS_Store文件，项目文件夹的.gitignore文件设置：
 ~~~
 .DS_Store
 **/.DS_Store
@@ -62,7 +66,7 @@ https://github.com/github/gitignore/blob/main/Python.gitignore
 
 ## 对于已经提交的
 
-希望git能够忽略，但同时并不会删除本地文件，需要在控制台输入以下命令：
+希望git忽略，本地保留，终端输入：
 ~~~
 git rm -r --cached $file_path
 ~~~
