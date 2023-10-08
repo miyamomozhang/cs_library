@@ -21,19 +21,19 @@
 
 - 使用man手册的方式，能大大加快开发速度，可能安装的时候有些安装不完整，下面结合网络上搜索信息进行补充：
 
-  ```javascript
-  $ sudo apt-get install manpages
-  $ sudo apt-get install manpages-dev
-  $ sudo apt-get install manpages-posix
-  $ sudo apt-get install manpages-posix-dev
-  ```
+  ~~~bash
+  sudo apt-get install manpages
+  sudo apt-get install manpages-dev
+  sudo apt-get install manpages-posix
+  sudo apt-get install manpages-posix-dev
+  ~~~
 
-  ```javascript
+  ~~~bash
   manpages 包含 GNU/Linux 的基本操作
   manpages-dev 包含 GNU/Linux 的基本操作API
   manpages-posix 包含 POSIX 所定义公用程序的方法
   manpages-posix-dev 包含 POSIX 的 header files 和 library calls 的用法
-  ```
+  ~~~
 
   **安装The Linux man-pages project最新文档方便查找：(推荐，包含 linux programmer's manual)**
 
