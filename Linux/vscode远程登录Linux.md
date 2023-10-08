@@ -36,7 +36,7 @@
    scp id_rsa.pub linux用户名@LinuxIP:/home/Linux用户名/.ssh
    ~~~
 
-   ![](../markdown_imags/ssh2-6661000.png)
+   ![](../markdown_imags/ssh2.png)
 
 
 
