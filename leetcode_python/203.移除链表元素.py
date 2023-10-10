@@ -20,6 +20,7 @@ class Solution:
         prehead = ListNode()
         prev = prehead
         while head:
+            prev.next = None
             if head.val != val:
                 prev.next = head
                 prev = prev.next
