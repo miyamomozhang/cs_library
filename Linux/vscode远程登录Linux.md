@@ -1,3 +1,7 @@
+
+
+这篇文档适用于**第一次在本机（mac）上连接到Linux**的情况，**重装Linux系统**之后我们需要对**本地known_hosts**文件做出改变，详见[重装Linux远程登录失效](./重装Linux远程登录失效.md)【**known_hosts**文件用于验证远程登陆系统的身份。ssh可以自动将密钥添加到用户文件，也可以手动添加。该文件包含用户已连接过所有主机的公共密钥列表。一般，初次登陆，ssh会自动将远程主机的公钥添加到用户的known_hosts文件。】
+
 # vscode远程登录Linux（输密码）
 
 1. vscode 安装插件:Code Remote Development，安装完成后注意vscode左侧
@@ -51,3 +55,6 @@
 4.  查看是否生效，点vscode左下角，如下（和上一节步骤5一样）但是但是不会出现需要输密码的情况，说明我们成功了！！！
 
 ​		![ssh3](../markdown_imags/ssh3.png)
+
+
+
