@@ -1,3 +1,19 @@
+
+
+# conda 命令参考
+
+官方在线版：https://docs.conda.io/projects/conda/en/stable/user-guide/cheatsheet.html
+
+[本地conda命令](./conda-cheatsheet.pdf)
+
+注意，conda激活和退出虚拟环境命令更新（2023-10-13发现的~~~~）
+
+激活：`source activate 环境名`
+
+退出：`conda deactivate`
+
+
+
 # 插件
 
 去Anaconda官网下载安装，安装完成之后，打开

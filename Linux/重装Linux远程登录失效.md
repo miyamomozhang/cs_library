@@ -39,3 +39,4 @@ OpenSSH会把我们ssh远程访问过的计算机的公钥(public key)都记录�
 
 
 
+清除旧的公钥后，请参考[vscode远程登录Linux](./vscode远程登录Linux.md) 的 免密登录配置 的2、3、4

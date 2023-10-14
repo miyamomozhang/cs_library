@@ -4,6 +4,14 @@
 
 - `sudo apt upgrade`
 
+
+
+# 显示目录结构tree
+
+`sudo apt install tree`
+
+
+
 # c++相关
 
 - GNU 编辑器集合，GNU 调试器，和其他编译软件所必需的开发库和工具。

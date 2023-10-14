@@ -1,3 +1,7 @@
+# 文件夹不折叠成一行
+
+![](../markdown_imags/vscode文件夹不折叠成一行.png)
+
 # 插件
 
 - Code Runner：运行代码
@@ -44,4 +48,3 @@
          ![](../markdown_imags/vscode_setting_json.png)
 
       3. 修改配置文件settings.json
-      
