@@ -68,6 +68,7 @@ https://github.com/github//blob/main/Python.
 
 希望git忽略，本地保留，终端输入：
 ~~~
+git pull origin main
 git rm -r --cached $file_path
 ~~~
 
