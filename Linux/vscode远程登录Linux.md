@@ -56,5 +56,9 @@
 
 ​		![ssh3](../markdown_imags/ssh3.png)
 
+5. 如果失败，进入服务器，输入systemctl status sshd，报错Authentication refused: bad ownership or modes for file /home/dev1/.ssh/authorized_keys，表示SSH服务器拒绝了认证请求，说明authorized_keys文件的所有权或权限设置不满足SSH服务的安全要求，权限应该被严格设置为600
+
+   - .ssh 目录:只有文件的所有者（通常是登录用户）可以读取、写入和执行（进入）此目录。 chmod 700 .ssh 
+   - authorized_keys 文件:只有文件的所有者可以读取和写入该文件，其他人没有任何权限。  chmod 600 authorized_keys
 
 
